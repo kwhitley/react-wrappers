@@ -1,0 +1,64 @@
+{
+  "name": "react-wrappers",
+  "version": "1.0.0",
+  "scripts": {
+    "lint": "eslint **/*.js",
+    "test": "nyc mocha $(find src -name '*.spec.js') --recursive --require babel-core/register",
+    "test:watch": "mocha $(find src -name '*.spec.js') --recursive --require babel-core/register --watch",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "prepublish": "npm run test",
+    "prebuild": "rm -rf dist",
+    "build": "rollup -c"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "description": "Shortcut for loading .env files automatically.",
+  "main": "./dist/react-wrappers.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kwhitley/react-wrappers.git"
+  },
+  "keywords": [
+    "redux",
+    "boilerplate",
+    "mapping",
+    "actions",
+    "reducer",
+    "simple",
+    "react",
+    "immutable",
+    "redux-sagas",
+    "redux-thunk",
+    "reselect"
+  ],
+  "author": "Kevin R. Whitley <krwhitley@gmail.com> (http://krwhitley.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kwhitley/react-wrappers/issues",
+    "email": "krwhitley@gmail.com"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "chai": "^4.1.2",
+    "coveralls": "^3.0.0",
+    "eslint": "^4.18.2",
+    "immutable": "^3.8.2",
+    "mocha": "^5.0.4",
+    "nyc": "^11.4.1",
+    "react": "^16.4.1",
+    "rollup": "^0.60.2",
+    "rollup-plugin-babel": "^3.0.4",
+    "rollup-plugin-commonjs": "^9.1.3",
+    "rollup-plugin-node-resolve": "^3.3.0"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "immutable": "^3.8.2",
+    "react": "^16.4.1"
+  }
+}
